@@ -87,10 +87,11 @@ const unknownEndpoint = (request, response) => {
     response.status(404).send({ error: 'unknown endpoint' })
   }
   
-  app.use(unknownEndpoint)
+app.use(unknownEndpoint)
 
-app.listen(3001, () => {
-    console.log("Listening on port 3001");
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
 })
 
 const generateID = () => {
